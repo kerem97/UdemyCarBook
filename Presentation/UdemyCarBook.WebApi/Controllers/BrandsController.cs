@@ -33,7 +33,7 @@ namespace UdemyCarBook.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetBanner(int id)
+        public async Task<IActionResult> GetBrand(int id)
         {
             var values = await _getBrandByIdQueryHandler.Handle(new GetBrandByIdQuery(id));
             return Ok(values);
@@ -41,7 +41,7 @@ namespace UdemyCarBook.WebApi.Controllers
 
         [HttpPost]
 
-        public async Task<IActionResult> CreateBanner(CreateBrandCommand command)
+        public async Task<IActionResult> CreateBrand(CreateBrandCommand command)
         {
             await _createBrandCommandHandler.Handle(command);
             return Ok("Marka Bilgisi Eklendi");
@@ -56,7 +56,7 @@ namespace UdemyCarBook.WebApi.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateBanner(UpdateBrandCommand command)
+        public async Task<IActionResult> UpdateBrand(UpdateBrandCommand command)
         {
             await _updateBrandCommandHandler.Handle(command);
             return Ok("Marka Bilgisi Güncellendi");
