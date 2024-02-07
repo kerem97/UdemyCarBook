@@ -4,8 +4,10 @@ using UdemyCarBook.Application.Features.CQRS.Handlers.BrandHandlers;
 using UdemyCarBook.Application.Features.CQRS.Handlers.CarHandlers;
 using UdemyCarBook.Application.Features.CQRS.Handlers.CategoryHandlers;
 using UdemyCarBook.Application.Features.CQRS.Handlers.ContactHandlers;
+using UdemyCarBook.Application.Features.Mediator.Handlers.FeatureHandlers;
 using UdemyCarBook.Application.Interfaces;
 using UdemyCarBook.Application.Interfaces.CarInterfaces;
+using UdemyCarBook.Application.Services;
 using UdemyCarBook.Persistance.Context;
 using UdemyCarBook.Persistance.Repositories;
 using UdemyCarBook.Persistance.Repositories.CarRepositories;
@@ -56,6 +58,14 @@ builder.Services.AddScoped<RemoveContactCommandHandler>();
 builder.Services.AddScoped<UpdateContactCommandHandler>();
 builder.Services.AddScoped<CreateContactCommandHandler>();
 
+
+builder.Services.AddScoped<GetFeatureQueryHandler>();
+builder.Services.AddScoped<GetFeatureByIdQueryHandler>();
+builder.Services.AddScoped<RemoveFeatureCommandHandler>();
+builder.Services.AddScoped<UpdateFeatureCommandHandler>();
+builder.Services.AddScoped<CreateFeatureCommandHandler>();
+
+builder.Services.AddApplicationService(builder.Configuration);
 
 
 
