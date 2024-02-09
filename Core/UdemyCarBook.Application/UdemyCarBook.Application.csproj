@@ -18,7 +18,9 @@
 
   <ItemGroup>
     <Folder Include="DTOs\About\Requests\" />
+    <Folder Include="DTOs\Banner\Requests\" />
     <Folder Include="DTOs\Car\Requests\" />
+    <Folder Include="DTOs\Contact\Responses\" />
     <Folder Include="DTOs\FooterAddress\Requests\" />
     <Folder Include="DTOs\Service\Requests\" />
     <Folder Include="DTOs\Testimonial\Requests\" />
