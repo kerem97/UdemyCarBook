@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Application.DTOs.About.Requests
+namespace UdemyCarBook.Application.DTOs.Service.Responses
 {
-    public class ResultAboutDto
+    public class ResultServiceDto
     {
-        public int AboutId { get; set; }
+        public int ServiceId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public string ImageUrl { get; set; }
+        public string IconUrl { get; set; }
     }
 }

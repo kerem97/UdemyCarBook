@@ -1,14 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using UdemyCarBook.Application.DTOs.About.Responses;
+using System.Net.Http;
+using UdemyCarBook.Application.DTOs.FooterAddress.Responses;
 
-namespace UdemyCarBook.WebUI.ViewComponents.AboutViewComponents
+namespace UdemyCarBook.WebUI.ViewComponents.FooterAddressComponents
 {
-    public class _AboutUsComponentPartial : ViewComponent
+    public class _FooterAddressComponentPartial : ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public _AboutUsComponentPartial(IHttpClientFactory httpClientFactory)
+        public _FooterAddressComponentPartial(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
@@ -16,11 +17,11 @@ namespace UdemyCarBook.WebUI.ViewComponents.AboutViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7251/api/Abouts");
+            var responseMessage = await client.GetAsync("https://localhost:7251/api/FooterAdresses");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultAboutDto>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultFooterAddressDto>>(jsonData);
                 return View(values);
             }
             return View();

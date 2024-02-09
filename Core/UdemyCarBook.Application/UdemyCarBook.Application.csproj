@@ -17,7 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\About\Responses\" />
+    <Folder Include="DTOs\About\Requests\" />
+    <Folder Include="DTOs\Car\Requests\" />
+    <Folder Include="DTOs\FooterAddress\Requests\" />
+    <Folder Include="DTOs\Service\Requests\" />
+    <Folder Include="DTOs\Testimonial\Requests\" />
   </ItemGroup>
 
 </Project>
