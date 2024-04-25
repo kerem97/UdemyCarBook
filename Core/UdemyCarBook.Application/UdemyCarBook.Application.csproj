@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UdemyCarBook.Domain\UdemyCarBook.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DTOs\About\Requests\" />
+    <Folder Include="DTOs\Banner\Requests\" />
+    <Folder Include="DTOs\Blog\Requests\" />
+    <Folder Include="DTOs\Car\Requests\" />
+    <Folder Include="DTOs\Contact\Responses\" />
+    <Folder Include="DTOs\FooterAddress\Requests\" />
+    <Folder Include="DTOs\Service\Requests\" />
+    <Folder Include="DTOs\Testimonial\Requests\" />
+  </ItemGroup>
+
+</Project>
