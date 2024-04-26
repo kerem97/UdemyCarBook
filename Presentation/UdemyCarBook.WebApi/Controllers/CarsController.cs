@@ -56,9 +56,7 @@ namespace UdemyCarBook.WebApi.Controllers
             var values = _getLast5CarsWithBrandQueryHandler.Handle();
             return Ok(values);
         }
-
         [HttpPost]
-
         public async Task<IActionResult> CreateCar(CreateCarCommand command)
         {
             await _createCarCommandHandler.Handle(command);
@@ -81,3 +79,5 @@ namespace UdemyCarBook.WebApi.Controllers
         }
     }
 }
+
+
