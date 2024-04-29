@@ -22,9 +22,11 @@
     <Folder Include="DTOs\Blog\Requests\" />
     <Folder Include="DTOs\CarPricing\Requests\" />
     <Folder Include="DTOs\Car\Requests\" />
+    <Folder Include="DTOs\Category\Requests\" />
     <Folder Include="DTOs\Contact\Responses\" />
     <Folder Include="DTOs\FooterAddress\Requests\" />
     <Folder Include="DTOs\Service\Requests\" />
+    <Folder Include="DTOs\TagCloud\Requests\" />
     <Folder Include="DTOs\Testimonial\Requests\" />
   </ItemGroup>
 
