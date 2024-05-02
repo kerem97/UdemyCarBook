@@ -21,7 +21,6 @@
     <Folder Include="DTOs\Author\Requests\" />
     <Folder Include="DTOs\Banner\Requests\" />
     <Folder Include="DTOs\Blog\Requests\" />
-    <Folder Include="DTOs\Brand\Requests\" />
     <Folder Include="DTOs\CarPricing\Requests\" />
     <Folder Include="DTOs\Category\Requests\" />
     <Folder Include="DTOs\Contact\Responses\" />

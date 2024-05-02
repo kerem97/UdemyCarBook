@@ -1,0 +1,48 @@
+﻿@model List<ResultBrandResponse>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Marka Listesi</h4>
+                        <p class="card-subtitle mb-4">
+                            Markalarla ilgili yapılabilecek işlemler buradan yapılabilir.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Marka</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var x in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td>@x.Name</td>
+                                            <td><a href="/AdminBrand/RemoveBrand/@x.BrandId" class="btn btn-outline-danger">Sil</a></td>
+                                            <td><a href="/AdminBrand/UpdateBrand/@x.BrandId" class="btn btn-outline-warning">Güncelle</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <td><a href="/AdminBrand/CreateBrand/" class="btn btn-outline-primary">Yeni Marka Girişi</a></td>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
