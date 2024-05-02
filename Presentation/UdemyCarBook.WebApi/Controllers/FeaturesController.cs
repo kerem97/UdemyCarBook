@@ -41,7 +41,7 @@ namespace UdemyCarBook.WebApi.Controllers
             return Ok("Özellik başarıyla eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public async Task<IActionResult> DeleteFeature(int id)
         {

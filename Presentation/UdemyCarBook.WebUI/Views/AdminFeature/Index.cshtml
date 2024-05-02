@@ -1,31 +1,28 @@
-﻿@model List<ResultCarWithBrandsDto>
+﻿@model List<ResultFeatureResponse>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
+
 <div class="page-content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Araç Listesi</h4>
+                        <h4 class="card-title">Araç Özellikleri Listesi</h4>
                         <p class="card-subtitle mb-4">
-                            Arabalarla ilgili yapılabilecek işlemler buradan yapılabilir.
+                            Araba özellikleri ile ilgili  işlemler buradan yapılabilir.
                         </p>
                         <div class="table-responsive">
                             <table class="table mb-0">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Marka</th>
-                                        <th>Model</th>
-                                        <th>Vites Türü</th>
-                                        <th>Km</th>
+                                        <th>Özellik</th>
                                         <th>Sil</th>
                                         <th>Güncelle</th>
-                                        <th>Detaylar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -34,19 +31,14 @@
                                         count++;
                                         <tr>
                                             <th scope="row">@count</th>
-                                            <td>@x.Brand</td>
-                                            <td>@x.Model</td>
-                                            <td>@x.Transmission</td>
-                                            <td>@x.Km</td>
-                                            <td><a href="/AdminCar/RemoveCar/@x.CarId" class="btn btn-outline-danger">Sil</a></td>
-                                            <td><a href="/AdminCar/UpdateCar/@x.CarId" class="btn btn-outline-warning">Güncelle</a></td>
-                                            <td><a href="/CarList/CarDetail/@x.CarId" class="btn btn-outline-dark">Detaylar</a></td>
-                                            <td><a href="/CarList/CarDetail/@x.CarId" class="btn btn-outline-primary">Sitede gör</a></td>
+                                            <td>@x.Name</td>
+                                            <td><a href="/AdminFeature/RemoveFeature/@x.FeatureId" class="btn btn-outline-danger">Sil</a></td>
+                                            <td><a href="/AdminFeature/UpdateFeature/@x.FeatureId" class="btn btn-outline-warning">Güncelle</a></td>
                                         </tr>
                                     }
                                 </tbody>
                             </table>
-                            <td><a href="/AdminCar/CreateCar/" class="btn btn-outline-primary">Yeni Araç Girişi</a></td>
+                            <td><a href="/AdminFeature/CreateCar/" class="btn btn-outline-primary">Yeni Araç Girişi</a></td>
                         </div>
                     </div>
                 </div>
