@@ -50,7 +50,7 @@ namespace UdemyCarBook.WebApi.Controllers
             return Ok("Banner Bilgisi Eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public async Task<IActionResult> RemoveBanner(int id)
         {

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Application.DTOs.Banner.Responses
+namespace UdemyCarBook.Application.DTOs.Banner.Requests
 {
-    public class ResultBannerDto
+    public class UpdateBannerRequest
     {
         public int BannerId { get; set; }
         public string Title { get; set; }
