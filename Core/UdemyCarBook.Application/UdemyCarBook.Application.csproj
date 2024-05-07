@@ -17,11 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\About\Requests\" />
-    <Folder Include="DTOs\Author\Requests\" />
-    <Folder Include="DTOs\Blog\Requests\" />
     <Folder Include="DTOs\CarPricing\Requests\" />
-    <Folder Include="DTOs\Category\Requests\" />
     <Folder Include="DTOs\Contact\Responses\" />
     <Folder Include="DTOs\FooterAddress\Requests\" />
     <Folder Include="DTOs\Service\Requests\" />

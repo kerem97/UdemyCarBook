@@ -22,6 +22,13 @@ namespace UdemyCarBook.WebApi.Controllers
             var values = _commentsRepository.GetAll();
             return Ok(values);
         }
+
+        [HttpGet("[action]/{id}")]
+        public IActionResult CommentListByBlogId(int id)
+        {
+            var values = _commentsRepository.GetCommentsByBlogId(id);
+            return Ok(values);
+        }
         [HttpPost("[action]")]
         public IActionResult CreateComment(Comment comment)
         {
@@ -29,7 +36,6 @@ namespace UdemyCarBook.WebApi.Controllers
             return Ok("Eklendi");
         }
         [HttpDelete("[action]")]
-
         public IActionResult RemoveComment(int id)
         {
             var value = _commentsRepository.GetById(id);

@@ -1,0 +1,34 @@
+﻿@model CreateAboutRequest
+@{
+    ViewData["Title"] = "CreateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yeni Hakkımda Girişi</h4>
+                        <p class="card-subtitle mb-4">Hakkımda ile ilgili özellikleri aşadağıki kutucağa giebilirsiniz. Veri girişinden sonra kaydet butonuna tıklayarak işlemi tamamlayabilirsiniz.</p>
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="exampleInputName">Hakkımda Başlığı</label>
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="Title" placeholder="Banner Başlığı Girişi Yapınız">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName">Hakkımda Açıklaması</label>
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="Description" placeholder="Banner Açıklaması Girişi Yapınız">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName">Hakkımda Görseli</label>
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="ImageUrl" placeholder="Video Açıklaması Girişi Yapınız">
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

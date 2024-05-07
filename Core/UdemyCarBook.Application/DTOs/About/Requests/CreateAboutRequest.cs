@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Application.DTOs.About.Responses
+namespace UdemyCarBook.Application.DTOs.About.Requests
 {
-    public class ResultAboutDto
+    public class CreateAboutRequest
     {
-        public int AboutId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }

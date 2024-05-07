@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Application.DTOs.Category.Responses
+namespace UdemyCarBook.Application.DTOs.Category.Requests
 {
-    public class ResultCategoryResponse
+    public class UpdateCategoryRequest
     {
-        public int CategoryId { get; set; }
-
+        public int Id { get; set; }
         public string Name { get; set; }
     }
 }

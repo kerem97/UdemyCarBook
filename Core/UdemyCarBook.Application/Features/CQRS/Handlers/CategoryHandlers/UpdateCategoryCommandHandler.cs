@@ -20,7 +20,7 @@ namespace UdemyCarBook.Application.Features.CQRS.Handlers.CategoryHandlers
 
         public async Task Handle(UpdateCategoryCommand command)
         {
-            var values = await _repository.GetByIdAsync(command.CategoryId);
+            var values = await _repository.GetByIdAsync(command.Id);
             values.Name = command.Name;
             await _repository.UpdateAsync(values);
         }
