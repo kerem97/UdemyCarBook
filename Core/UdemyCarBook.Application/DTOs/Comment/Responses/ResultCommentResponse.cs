@@ -4,16 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Domain.Entities
+namespace UdemyCarBook.Application.DTOs.Comment.Responses
 {
-    public class Comment
+    public class ResultCommentResponse
     {
         public int CommentId { get; set; }
         public string Name { get; set; }
         public DateTime CreatedDate { get; set; }
         public string Content { get; set; }
-
-        public Blog Blog { get; set; }
         public int BlogId { get; set; }
     }
 }

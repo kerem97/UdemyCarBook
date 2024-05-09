@@ -27,7 +27,7 @@ namespace UdemyCarBook.Persistance.Repositories.CommentRepositories
         {
             return _context.Comments.Select(x => new Comment
             {
-                Id = x.Id,
+                CommentId = x.CommentId,
                 BlogId = x.BlogId,
                 CreatedDate = x.CreatedDate,
                 Content = x.Content,
@@ -48,7 +48,7 @@ namespace UdemyCarBook.Persistance.Repositories.CommentRepositories
 
         public void Remove(Comment item)
         {
-            var value = _context.Comments.Find(item.Id);
+            var value = _context.Comments.Find(item.CommentId);
             _context.Comments.Remove(value);
             _context.SaveChanges();
         }
