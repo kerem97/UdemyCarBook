@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Application.DTOs.Testimonial.Responses
+namespace UdemyCarBook.Application.DTOs.Testimonial.Requests
 {
-    public class ResultTestimonialDto
+    public class CreateTestimonialRequest
     {
-        public int TestimonialId { get; set; }
         public string Name { get; set; }
         public string Title { get; set; }
         public string Comment { get; set; }

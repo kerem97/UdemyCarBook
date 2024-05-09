@@ -22,7 +22,7 @@ namespace UdemyCarBook.WebUI.ViewComponents.TestimonialViewComponent
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultTestimonialDto>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultTestimonialResponse>>(jsonData);
                 return View(values);
             }
             return View();

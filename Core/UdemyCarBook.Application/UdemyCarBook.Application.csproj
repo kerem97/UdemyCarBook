@@ -20,7 +20,6 @@
     <Folder Include="DTOs\CarPricing\Requests\" />
     <Folder Include="DTOs\Comment\Requests\" />
     <Folder Include="DTOs\TagCloud\Requests\" />
-    <Folder Include="DTOs\Testimonial\Requests\" />
   </ItemGroup>
 
 </Project>
