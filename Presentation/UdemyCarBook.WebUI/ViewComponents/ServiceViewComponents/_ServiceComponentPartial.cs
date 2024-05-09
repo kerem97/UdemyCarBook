@@ -19,7 +19,7 @@ namespace UdemyCarBook.WebUI.ViewComponents.ServiceViewComponents
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultServiceDto>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultServiceResponse>>(jsonData);
                 return View(values);
             }
             return View();

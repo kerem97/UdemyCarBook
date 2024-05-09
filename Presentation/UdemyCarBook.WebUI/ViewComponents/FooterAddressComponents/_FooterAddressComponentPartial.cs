@@ -21,7 +21,7 @@ namespace UdemyCarBook.WebUI.ViewComponents.FooterAddressComponents
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultFooterAddressDto>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultFooterAddressResponse>>(jsonData);
                 return View(values);
             }
             return View();

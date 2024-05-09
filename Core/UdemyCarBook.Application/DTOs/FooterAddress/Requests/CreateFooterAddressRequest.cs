@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Application.DTOs.FooterAddress.Responses
+namespace UdemyCarBook.Application.DTOs.FooterAddress.Requests
 {
-    public class ResultFooterAddressDto
+    public class CreateFooterAddressRequest
     {
-        public int FooterAddressId { get; set; }
+    
         public string Description { get; set; }
         public string Address { get; set; }
         public string PhoneNumber { get; set; }

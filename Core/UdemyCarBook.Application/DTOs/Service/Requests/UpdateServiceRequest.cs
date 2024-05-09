@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Application.DTOs.Service.Responses
+namespace UdemyCarBook.Application.DTOs.Service.Requests
 {
-    public class ResultServiceDto
+    public class UpdateServiceRequest
     {
         public int ServiceId { get; set; }
         public string Title { get; set; }
