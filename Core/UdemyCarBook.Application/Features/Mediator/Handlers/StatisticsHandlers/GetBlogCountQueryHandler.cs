@@ -6,29 +6,26 @@ using System.Text;
 using System.Threading.Tasks;
 using UdemyCarBook.Application.Features.Mediator.Queries.StatisticsQueries;
 using UdemyCarBook.Application.Features.Mediator.Results.StatisticsResults;
-using UdemyCarBook.Application.Interfaces.CarInterfaces;
 using UdemyCarBook.Application.Interfaces.StatisticsInterfaces;
 
 namespace UdemyCarBook.Application.Features.Mediator.Handlers.StatisticsHandlers
 {
-    public class GetCarCountQueryHandler : IRequestHandler<GetCarCountQuery, GetCarCountQueryResult>
+    public class GetBlogCountQueryHandler : IRequestHandler<GetBlogCountQuery, GetBlogCountQueryResult>
     {
         private readonly IStatisticsRepository _repository;
 
-        public GetCarCountQueryHandler(IStatisticsRepository repository)
+        public GetBlogCountQueryHandler(IStatisticsRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<GetCarCountQueryResult> Handle(GetCarCountQuery request, CancellationToken cancellationToken)
+        public async Task<GetBlogCountQueryResult> Handle(GetBlogCountQuery request, CancellationToken cancellationToken)
         {
-
-            var value = _repository.GetCarCount();
-            return new GetCarCountQueryResult
+            var value = _repository.GetBlogCount();
+            return new GetBlogCountQueryResult
             {
-                CarCount = value,
+                BlogCount = value
             };
-
         }
     }
 }

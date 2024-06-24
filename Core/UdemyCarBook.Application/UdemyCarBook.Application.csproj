@@ -19,6 +19,7 @@
   <ItemGroup>
     <Folder Include="DTOs\CarPricing\Requests\" />
     <Folder Include="DTOs\Comment\Requests\" />
+    <Folder Include="DTOs\Statistics\Requests\" />
     <Folder Include="DTOs\TagCloud\Requests\" />
   </ItemGroup>
 
