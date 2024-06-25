@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UdemyCarBook.Persistance.Context;
 
@@ -11,9 +12,11 @@ using UdemyCarBook.Persistance.Context;
 namespace UdemyCarBook.Persistance.Migrations
 {
     [DbContext(typeof(CarBookContext))]
-    partial class CarBookContextModelSnapshot : ModelSnapshot
+    [Migration("20240624134845_mig_rentAcar")]
+    partial class mig_rentAcar
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -355,31 +358,6 @@ namespace UdemyCarBook.Persistance.Migrations
                     b.ToTable("Contacts");
                 });
 
-            modelBuilder.Entity("UdemyCarBook.Domain.Entities.Customer", b =>
-                {
-                    b.Property<int>("CustomerId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"));
-
-                    b.Property<string>("Mail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Surname")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CustomerId");
-
-                    b.ToTable("Customer");
-                });
-
             modelBuilder.Entity("UdemyCarBook.Domain.Entities.Feature", b =>
                 {
                     b.Property<int>("FeatureId")
@@ -477,6 +455,9 @@ namespace UdemyCarBook.Persistance.Migrations
                     b.Property<int>("LocationId")
                         .HasColumnType("int");
 
+                    b.Property<int>("PickUpLocationId")
+                        .HasColumnType("int");
+
                     b.HasKey("RentACarId");
 
                     b.HasIndex("CarId");
@@ -484,58 +465,6 @@ namespace UdemyCarBook.Persistance.Migrations
                     b.HasIndex("LocationId");
 
                     b.ToTable("RentACars");
-                });
-
-            modelBuilder.Entity("UdemyCarBook.Domain.Entities.RentACarProcess", b =>
-                {
-                    b.Property<int>("RentACarProcessId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RentACarProcessId"));
-
-                    b.Property<int>("CarId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DropOffDate")
-                        .HasColumnType("Date");
-
-                    b.Property<string>("DropOffDescription")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("DropOffLocation")
-                        .HasColumnType("int");
-
-                    b.Property<TimeSpan>("DropOffTime")
-                        .HasColumnType("time");
-
-                    b.Property<DateTime>("PickUpDate")
-                        .HasColumnType("Date");
-
-                    b.Property<string>("PickUpDescription")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PickUpLocation")
-                        .HasColumnType("int");
-
-                    b.Property<TimeSpan>("PickUpTime")
-                        .HasColumnType("time");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("RentACarProcessId");
-
-                    b.HasIndex("CarId");
-
-                    b.HasIndex("CustomerId");
-
-                    b.ToTable("RentACarProcesses");
                 });
 
             modelBuilder.Entity("UdemyCarBook.Domain.Entities.Service", b =>
@@ -748,25 +677,6 @@ namespace UdemyCarBook.Persistance.Migrations
                     b.Navigation("Location");
                 });
 
-            modelBuilder.Entity("UdemyCarBook.Domain.Entities.RentACarProcess", b =>
-                {
-                    b.HasOne("UdemyCarBook.Domain.Entities.Car", "Car")
-                        .WithMany("RentACarProcesses")
-                        .HasForeignKey("CarId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("UdemyCarBook.Domain.Entities.Customer", "Customer")
-                        .WithMany("RentACarProcesses")
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Car");
-
-                    b.Navigation("Customer");
-                });
-
             modelBuilder.Entity("UdemyCarBook.Domain.Entities.TagCloud", b =>
                 {
                     b.HasOne("UdemyCarBook.Domain.Entities.Blog", "Blog")
@@ -803,19 +713,12 @@ namespace UdemyCarBook.Persistance.Migrations
 
                     b.Navigation("CarPricings");
 
-                    b.Navigation("RentACarProcesses");
-
                     b.Navigation("RentACars");
                 });
 
             modelBuilder.Entity("UdemyCarBook.Domain.Entities.Category", b =>
                 {
                     b.Navigation("Blogs");
-                });
-
-            modelBuilder.Entity("UdemyCarBook.Domain.Entities.Customer", b =>
-                {
-                    b.Navigation("RentACarProcesses");
                 });
 
             modelBuilder.Entity("UdemyCarBook.Domain.Entities.Feature", b =>
