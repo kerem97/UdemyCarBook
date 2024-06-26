@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UdemyCarBook.Persistance.Context;
 
@@ -11,9 +12,11 @@ using UdemyCarBook.Persistance.Context;
 namespace UdemyCarBook.Persistance.Migrations
 {
     [DbContext(typeof(CarBookContext))]
-    partial class CarBookContextModelSnapshot : ModelSnapshot
+    [Migration("20240626090248_mig_reservation_add")]
+    partial class mig_reservation_add
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -829,7 +832,7 @@ namespace UdemyCarBook.Persistance.Migrations
             modelBuilder.Entity("UdemyCarBook.Domain.Entities.Reservation", b =>
                 {
                     b.HasOne("UdemyCarBook.Domain.Entities.Car", "Car")
-                        .WithMany("Reservations")
+                        .WithMany()
                         .HasForeignKey("CarID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -890,8 +893,6 @@ namespace UdemyCarBook.Persistance.Migrations
                     b.Navigation("RentACarProcesses");
 
                     b.Navigation("RentACars");
-
-                    b.Navigation("Reservations");
                 });
 
             modelBuilder.Entity("UdemyCarBook.Domain.Entities.Category", b =>
