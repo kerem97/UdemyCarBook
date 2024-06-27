@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DTOs\CarFeature\Requests\" />
     <Folder Include="DTOs\CarPricing\Requests\" />
-    <Folder Include="DTOs\Comment\Requests\" />
     <Folder Include="DTOs\RentACar\Requests\" />
     <Folder Include="DTOs\Reservation\Responses\" />
     <Folder Include="DTOs\Statistics\Requests\" />

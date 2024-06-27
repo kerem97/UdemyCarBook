@@ -16,13 +16,11 @@ namespace UdemyCarBook.Persistance.Repositories.CommentRepositories
         {
             _context = context;
         }
-
         public void Create(Comment item)
         {
             _context.Comments.Add(item);
             _context.SaveChanges();
         }
-
         public List<Comment> GetAll()
         {
             return _context.Comments.Select(x => new Comment
@@ -34,29 +32,29 @@ namespace UdemyCarBook.Persistance.Repositories.CommentRepositories
                 Name = x.Name
             }).ToList();
         }
-
         public Comment GetById(int id)
         {
             return _context.Comments.Find(id);
         }
-
         public List<Comment> GetCommentsByBlogId(int id)
         {
             return _context.Set<Comment>().Where(x => x.BlogId == id).ToList();
 
         }
-
         public void Remove(Comment item)
         {
             var value = _context.Comments.Find(item.CommentId);
             _context.Comments.Remove(value);
             _context.SaveChanges();
         }
-
         public void Update(Comment item)
         {
             _context.Comments.Update(item);
             _context.SaveChanges();
+        }
+        public int GetCommentCountByBlog(int id)
+        {
+            return _context.Comments.Where(x => x.BlogId == id).Count();
         }
     }
 }

@@ -10,13 +10,12 @@ namespace UdemyCarBook.WebUI.Controllers
 {
     public class AdminCarController : Controller
     {
-        private readonly IHttpClientFactory _httpClientFactory;
 
+        private readonly IHttpClientFactory _httpClientFactory;
         public AdminCarController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
-
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
@@ -45,12 +44,12 @@ namespace UdemyCarBook.WebUI.Controllers
             ViewBag.BrandValues = brandValues;
             return View();
         }
-        [HttpPost]
 
-        public async Task<IActionResult> CreateCar(CreateCarRequest request)
+        [HttpPost]
+        public async Task<IActionResult> CreateCar(CreateCarRequest createCarDto)
         {
             var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(request);
+            var jsonData = JsonConvert.SerializeObject(createCarDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PostAsync("https://localhost:7251/api/Cars", stringContent);
             if (responseMessage.IsSuccessStatusCode)
@@ -97,13 +96,14 @@ namespace UdemyCarBook.WebUI.Controllers
             }
             return View();
         }
+
         [HttpPost]
-        public async Task<IActionResult> UpdateCar(UpdateCarRequest request)
+        public async Task<IActionResult> UpdateCar(UpdateCarRequest updateCarDto)
         {
             var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(request);
+            var jsonData = JsonConvert.SerializeObject(updateCarDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PutAsync("https://localhost:7251/api/Cars", stringContent);
+            var responseMessage = await client.PutAsync("https://localhost:7251/api/Cars/", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
